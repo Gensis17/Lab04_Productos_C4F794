@@ -1,0 +1,19 @@
+﻿@model Lab04_Productos_C4F794.Models.Producto
+
+<h2>Eliminar Producto</h2>
+
+<h3>¿Está seguro que desea eliminar este producto?</h3>
+
+<div>
+    <p><strong>Id:</strong> @Model.Id</p>
+    <p><strong>Nombre:</strong> @Model.Nombre</p>
+    <p><strong>Precio:</strong> @Model.Precio.ToString("C")</p>
+    <p><strong>Categoria:</strong> @Model.Categoria</p>
+</div>
+
+<form asp-action="Eliminar">
+    <input type="hidden" asp-for="Id" />
+    
+    <button type="submit">Eliminar</button>
+    <a asp-action="Index">Cancelar</a>
+</form>
