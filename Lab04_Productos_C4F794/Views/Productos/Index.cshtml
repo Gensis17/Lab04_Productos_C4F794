@@ -1,0 +1,41 @@
+﻿
+@model List<Lab04_Productos_C4F794.Models.Producto>
+
+<h2>Lista de Productos</h2>
+
+<a asp-action="Crear" class="btn btn-primary">Nuevo Producto</a>
+
+@if (!Model.Any())
+{
+    <p>No hay productos registrados.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Categoria</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model)
+            {
+                <tr>
+                    <td>@p.Id</td>
+                    <td>@p.Nombre</td>
+                    <td>@p.Precio.ToString("C")</td>
+                    <td>@p.Categoria</td>
+                    <td>
+                        <a asp-action="Detalles" asp-route-id="@p.Id">Detalles</a> |
+                        <a asp-action="Editar" asp-route-id="@p.Id">Editar</a> |
+                        <a asp-action="Eliminar" asp-route-id="@p.Id">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
