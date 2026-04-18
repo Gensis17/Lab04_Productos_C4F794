@@ -1,0 +1,31 @@
+﻿@model Lab04_Productos_C4F794.Models.Producto
+
+<h2>Crear Producto</h2>
+
+<form asp-action="Crear">
+    <div>
+        <label asp-for="Nombre"></label>
+        <input asp-for="Nombre" class="form-control" />
+        <span asp-validation-for="Nombre" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Precio"></label>
+        <input asp-for="Precio" class="form-control" />
+        <span asp-validation-for="Precio" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label asp-for="Categoria"></label>
+        <select asp-for="Categoria" class="form-control">
+            <option value="">Seleccione</option>
+            <option>Electronica</option>
+            <option>Ropa</option>
+            <option>Hogar</option>
+            <option>Alimentos</option>
+        </select>
+        <span asp-validation-for="Categoria" class="text-danger"></span>
+    </div>
+
+    <button type="submit">Guardar</button>
+</form>
